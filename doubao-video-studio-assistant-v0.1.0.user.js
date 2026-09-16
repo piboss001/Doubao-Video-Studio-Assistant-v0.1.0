@@ -1,6 +1,4 @@
-from pathlib import Path
-
-code = r'''// ==UserScript==
+// ==UserScript==
 // @name         Doubao Video Studio Assistant
 // @namespace    https://github.com/piboss001/doubao-Video-Studio-Assistant-v0.1.0
 // @version      0.3.0
@@ -1302,12 +1300,3 @@ width:100%;box-sizing:border-box;border:1px solid #dedee2;border-radius:8px;back
     boot();
   }
 })();
-'''
-
-path = Path('/mnt/data/doubao-video-studio-assistant-v0.3.0.user.js')
-path.write_text(code, encoding='utf-8')
-
-# basic sanity checks
-assert code.startswith('// ==UserScript==')
-assert code.rstrip().endswith('})();')
-print(f'Created: {path}\nLines: {code.count(chr(10))+1}\nBytes: {path.stat().st_size}')
